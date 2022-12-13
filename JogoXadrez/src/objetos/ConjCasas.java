@@ -1,4 +1,4 @@
-package pecas;
+package objetos;
 
 public class ConjCasas {
 	

@@ -1,6 +1,9 @@
-package pecas;
-
+package objetos;
 public class Posicao {
+	@Override
+	public String toString() {
+		return "[" + this.linha + ", " + this.coluna + "]";
+	}
 	int linha;
     int coluna;
     void setPosicao(int l, int c){
