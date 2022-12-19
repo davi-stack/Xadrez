@@ -4,17 +4,37 @@ public class Posicao {
 	public String toString() {
 		return "[" + this.linha + ", " + this.coluna + "]";
 	}
-	int linha;
-    int coluna;
-    void setPosicao(int l, int c){
+	public int linha =0;
+    public int getLinha() {
+		return linha;
+	}
+	public void setLinha(int linha) {
+		this.linha = linha;
+	}
+	public int getColuna() {
+		return coluna;
+	}
+	public void setColuna(int coluna) {
+		this.coluna = coluna;
+	}
+	public int coluna =0;
+    public void setPosicao(int l, int c){
         this.linha = l;
         this.coluna = c;
     }
-    Posicao(int l, int c){
+    public Posicao(int l, int c){
         this.linha = l;
         this.coluna = c;
     }
-    Posicao(){
-        
+    boolean equals(Posicao a) {
+    	if((this.linha == a.linha)&&(this.coluna == a.coluna)){
+    		return true;
+    	}else {
+    		return false;
+    	}
     }
+    public Posicao(){
+        this.linha = 0;
+        this.coluna = 0;
+        }
 }

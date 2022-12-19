@@ -9,6 +9,12 @@ public class Main{
 			tabuleiro.imprimir();
 			System.out.println(tabuleiro.getCavalo1()
 					.imprimirOpcMov());
+			tabuleiro.getCavalo1().atualizarOpc();
+			System.out.println(tabuleiro.getCavalo1()
+					.imprimirOpcMov());
+			System.out.println();
+			System.out.println(tabuleiro.getPeoes().get(0).imprimirOpcMov());
+			//tabuleiro.getPeoes().
 			
 			
 	        
