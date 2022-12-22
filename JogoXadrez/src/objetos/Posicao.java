@@ -33,6 +33,9 @@ public class Posicao {
     		return false;
     	}
     }
+    public boolean DentroDoTabuleiro() {
+    	return ((this.linha<8)&&(this.linha>=0)&&(this.coluna<8)&&(this.coluna>=0));
+    }
     public Posicao(){
         this.linha = 0;
         this.coluna = 0;

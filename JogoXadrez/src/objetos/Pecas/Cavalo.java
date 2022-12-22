@@ -8,12 +8,14 @@ import objetos.Posicao;
 public class Cavalo extends PecaSimples implements Peca{
 	    Posicao pAtual = new Posicao();
 	    List<Posicao> opcMov = new ArrayList<Posicao>();
+	    char simbolo;
 	    
-	    public Cavalo(int i, int j) {
-			// TODO Auto-generated constructor stub
-	    	super(i, j);
+	    public Cavalo(int a, int b) {
+	    	super(a, b, 'c');
+	    	
 		}
-		public void atualizarOpc() {
+		public void atualizarOpcMov() {
+			this.opcMov.clear();
 	    	this.mov1();
 	    	this.mov2();
 	    	this.mov3();
@@ -23,113 +25,85 @@ public class Cavalo extends PecaSimples implements Peca{
 	    	this.mov7();
 	    	this.mov8();
 	    }
-	    Posicao mov1() {
+		public List<Posicao> getOpcMov() {
+			return this.opcMov;
+		}
+	    void mov1() {
 	    	Posicao retorno = new Posicao(this.getpAtual()
 	    			.getLinha()  -2, 
 	    			          this.getpAtual().getColuna()-1);
+	    	
 	        //retorna a primeira opção de movimento
-	        if((retorno.linha>=0&&retorno.linha<8)
-	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
+	        if(retorno.DentroDoTabuleiro()) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
+	        	
 	        }
+	    	
+	    	
 	        
 	    }
-	    Posicao mov2() {
+	    void mov2() {
 	    	Posicao retorno = new Posicao(this.getpAtual() 
 	    			          .getLinha()-2, this.getpAtual().getColuna()+1);
 	        //retorna a primeira opção de movimento
 	        if((retorno.linha>=0&&retorno.linha<8)
 	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
+	        	
 	        }
 	    }
-	    Posicao mov3() {
+	    void mov3() {
 	    	Posicao retorno = new Posicao(this.getpAtual() 
 	    			          .getLinha()+2, this.getpAtual().getColuna()+1);
 	        //retorna a primeira opção de movimento
-	        if((retorno.linha>=0&&retorno.linha<8)
-	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
+	        if(retorno.DentroDoTabuleiro()) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
+	        	
 	        }
 	    }
-	    Posicao mov4() {
+	    void mov4() {
 	    	Posicao retorno = new Posicao(this.getpAtual() 
 	    			          .getLinha()+2, this.getpAtual().getColuna()-1);
 	        //retorna a primeira opção de movimento
-	        if((retorno.linha>=0&&retorno.linha<8)
-	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
+	        if(retorno.DentroDoTabuleiro()) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
 	        }
 	    }
-	    Posicao mov5() {
-	    	Posicao retorno = new Posicao(this.getpAtual() 
+	    void mov5() {
+	    
+	    Posicao retorno = new Posicao(this.getpAtual() 
 	    			          .getLinha()-1, this.getpAtual().getColuna()+2);
 	        //retorna a primeira opção de movimento
-	        if((retorno.linha>=0&&retorno.linha<8)
-	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
+	        if(retorno.DentroDoTabuleiro()) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
+	        	
 	        }
 	    }
-	    
-	    Posicao mov6() {
+	    void mov6() {
 	    	Posicao retorno = new Posicao(this.getpAtual() 
 	    			          .getLinha()+1, this.getpAtual().getColuna()+2);
 	        //retorna a primeira opção de movimento
-	        if((retorno.linha>=0&&retorno.linha<8)
-	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
+	        if(retorno.DentroDoTabuleiro()) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
+	        	
 	        }
 	    }
-	    
-	    Posicao mov7() {
+        void mov7() {
 	    	Posicao retorno = new Posicao(this.getpAtual() 
 	    			          .getLinha()+1, this.getpAtual().getColuna()-2);
 	        //retorna a primeira opção de movimento
-	        if((retorno.linha>=0&&retorno.linha<8)
-	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
+	        if(retorno.DentroDoTabuleiro()) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
-	     
+	        	
+	        }
 	    }
-	    }
-	    Posicao mov8() {
-	    	Posicao retorno = new Posicao(this.getpAtual() 
+	    void mov8() {
+	    Posicao retorno = new Posicao(this.getpAtual() 
 	    			          .getLinha()-1, this.getpAtual().getColuna()-2);
 	        //retorna a primeira opção de movimento
-	        if((retorno.linha>=0&&retorno.linha<8)
-	        		&&(retorno.coluna>0&&retorno.coluna<8)) {
+	        if(retorno.DentroDoTabuleiro()) {
 	        	this.opcMov.add(retorno);
-	        	return retorno;
-	        }else {
-	        	retorno.setPosicao(-1, -1);
-	        	return retorno;
+	        	
 	        }
 	    }
 	        
@@ -149,6 +123,13 @@ public class Cavalo extends PecaSimples implements Peca{
 		
 		@Override
 		public void mover() {
+			// TODO Auto-generated method stub
+			
+		}
+
+	
+        @Override
+		public void setpAtual(int i, int j) {
 			// TODO Auto-generated method stub
 			
 		}
