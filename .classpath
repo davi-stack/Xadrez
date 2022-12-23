@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="pecas/" kind="src" path="JogoXadrez/src"/>
+	<classpathentry kind="output" path="JogoXadrez/bin"/>
+</classpath>

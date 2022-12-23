@@ -6,12 +6,16 @@ import java.util.List;
 import objetos.Posicao;
 
 public class Cavalo extends PecaSimples implements Peca{
-	    Posicao pAtual = new Posicao();
+	    public Posicao pAtual = new Posicao();
 	    List<Posicao> opcMov = new ArrayList<Posicao>();
 	    char simbolo;
-	    
+	    char time;
 	    public Cavalo(int a, int b) {
-	    	super(a, b, 'c');
+	    	 this.simbolo = 'c';
+	    	    
+	    	 this.pAtual = new Posicao(a, b);
+	         this.opcMov = new ArrayList<Posicao>();
+	         this.time = 'm';
 	    	
 		}
 		public void atualizarOpcMov() {
@@ -106,11 +110,9 @@ public class Cavalo extends PecaSimples implements Peca{
 	        	
 	        }
 	    }
-	        
+	      
 	    
-	    public Posicao getpAtual() {
-			return this.pAtual;
-		}
+	   
 	    
 	    	
 		@Override
@@ -122,18 +124,14 @@ public class Cavalo extends PecaSimples implements Peca{
 		
 		
 		@Override
-		public void mover() {
-			// TODO Auto-generated method stub
-			
+		public void mover(int a, int b) {
+			this.pAtual.setPosicao(a, b);
 		}
 
 	
-        @Override
-		public void setpAtual(int i, int j) {
-			// TODO Auto-generated method stub
-			
-		}
-		
+        public Posicao getpAtual() {
+    		return this.pAtual;
+    	}
 		
 		
 }

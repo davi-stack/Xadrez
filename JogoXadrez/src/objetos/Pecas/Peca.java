@@ -6,7 +6,7 @@ import java.util.List;
 import objetos.Posicao;
 
 public interface Peca {
-void mover();
+
 void kill();
 char time = 'm';
 public Posicao pAtual = new Posicao();
